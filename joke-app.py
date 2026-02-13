@@ -13,3 +13,4 @@ while True:
     print(data["punchline" ])
 print("Thanks for using the joke app!")
 print("Have a great day!")
+print("Goodbye!")
