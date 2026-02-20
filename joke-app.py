@@ -12,4 +12,4 @@ while True:
     print(data["setup"])
     print(data["punchline" ])
     print()
-print("End of the program")
+
