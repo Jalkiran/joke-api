@@ -33,12 +33,11 @@ while True:
     elif choice=="2":
        if len(tasks)==0:
           print("No task yet!")
-       else:
-#*     
+       else:    
          for i , t in enumerate(tasks, start=1):
                 print(i, ".", t)
     
-#*    #DELETE TASKS 
+    #DELETE TASKS 
     elif choice == "3":
         num = int(input("Enter task number to delete: "))
         if 1 <= num <= len(tasks):
@@ -47,6 +46,7 @@ while True:
             f=open("tasks.txt","w")
             f.write("\n".join(tasks))
             f.close()
+
             print(removed, "deleted!")
         else:
             print("Invalid number")
@@ -58,3 +58,5 @@ while True:
 
     else:
         print("Invalid choice")
+
+print("Hehe Guys(winks)")
