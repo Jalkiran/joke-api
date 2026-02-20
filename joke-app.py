@@ -1,21 +1,16 @@
-import requests
-joke2_url="https://official-joke-api.appspot.com/random_joke"
+
+#Option-2
+import random 
+secret=random.randint(1,10)
+attempts=0
 while True:
-    choice=input("Press Enter for a joke OR q for quit:").strip().lower()
-    if choice=='q':
-        print("goodbye")
-        break
-    
-    response1=requests.get(joke2_url)
-    data=response1.json()
-
-    print(data["setup"])
-    print(data["punchline" ])
-
-    print()
-
-
-print("Thanks for using the joke app!")
-print("Have a great day!")
-print("Goodbye!")
-print("Hello")
+ guess=int(input("Your guess:"))
+ attempts+=1
+ if guess>secret:
+    print("A little lower")
+ elif guess<secret:
+    print("A little higher")
+ else:
+    print("Correct!")
+    print("You guessed in",attempts,"attempts") 
+    break
