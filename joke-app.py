@@ -6,10 +6,16 @@ while True:
         print("goodbye")
         break
     
-    response=requests.get(joke2_url)
-    data=response.json()
+    response1=requests.get(joke2_url)
+    data=response1.json()
 
     print(data["setup"])
     print(data["punchline" ])
+
     print()
 
+
+print("Thanks for using the joke app!")
+print("Have a great day!")
+print("Goodbye!")
+print("Hello")
