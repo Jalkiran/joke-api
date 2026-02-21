@@ -3,7 +3,7 @@ joke2_url="https://official-joke-api.appspot.com/random_joke"
 while True:
     choice=input("Press Enter for a joke OR q for quit:").strip().lower()
     if choice=='q':
-        print("goodbye")
+        print("goodbye👋")
         break
     
     response=requests.get(joke2_url)
