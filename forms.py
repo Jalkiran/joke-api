@@ -15,15 +15,18 @@ def create_forms(fields,title):
   entry.pack(pady=5) 
   entries[field]=entry 
 #--------SUBMIT-------- 
+ status_label=tk.Label(root,text="",fg="red")
+ status_label.pack(pady=5)
  def submit(): 
      data={} 
      for field in entries:
          value=entries[field].get()
          if value.strip()=="":
-             print(f"{field} can not be empty")
+             status_label.config(text="All fields must be filled",fg="red")
              return
          data[field]=value
-     print("Submitted:",data)
+     print(data)
+     status_label.config(text="Submitted",fg="green")
      for field in entries:
          entries[field].delete(0,tk.END)
 #-------BUTTON---------

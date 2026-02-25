@@ -15,10 +15,16 @@ for field in fields:
 
 def submit():
     data={}
-    for fields in entries:
-        data=entries[field].get()
+    for field in entries:
+          value=entries[field].get()
+          if value.strip()=="":
+              print(f"{field}cannot be empty")
+              return 
+          data[field]=value
     print(data)
-
+    print("Success!")
+    for field in data:
+        entry.delete(0,tk.END)
 submit_btn=tk.Button(root,text ="Submit",command=submit)
 submit_btn.pack(pady=5)
 root.mainloop()
