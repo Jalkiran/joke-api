@@ -21,9 +21,6 @@ def calculator(fields,title):
              status_label.config(text="Enter valid numbers",fg="red")
              return None
        
-       status_label.config(text="",fg="red")
-       return num1,num2
-#--------Field-------
     for field in fields:
         label=tk.Label(root,text=field)
         label.pack(pady=5)
@@ -36,7 +33,7 @@ def calculator(fields,title):
 #-------ADD-----------
     def add():
       nums=get_numbers()
-      if not nums:
+      if nums is None:
          return
       num1,num2=nums
       result_box.insert(tk.END,num1+num2)
@@ -46,7 +43,7 @@ def calculator(fields,title):
 #---------SUBTRACT-------
     def sub():
       nums=get_numbers()
-      if not nums:
+      if nums is None:
          return
       num1,num2=nums
       result_box.insert(tk.END,num1-num2)
@@ -55,7 +52,7 @@ def calculator(fields,title):
 #--------MULTIPLY------
     def mul():
       nums=get_numbers()
-      if not nums:
+      if nums is None:
          return
       num1,num2=nums
       result_box.insert(tk.END,num1*num2)
@@ -64,7 +61,7 @@ def calculator(fields,title):
 #--------DIVIDE--------
     def div():
       nums=get_numbers()
-      if not nums:
+      if nums is None:
          return
       num1,num2=nums
       if num2==0:
@@ -79,11 +76,10 @@ def calculator(fields,title):
      data={}
      for field in entries:
         value=entries[field].get()
-        '''if value.strip()=="":
-            status_label.config(text="All fields mustt be filled",fg="red")
-            return'''
+        if value.strip()=="":
+            status_label.config(text="All fields must be filled",fg="red")
+            return
         data[field]=value
-     '''data[field]=entry.get()'''
      print(data)    
      status_label.config(text="Submitted",fg="green")
      for field in entries:
